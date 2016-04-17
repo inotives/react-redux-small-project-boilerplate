@@ -1,0 +1,28 @@
+{
+  "name": "react-redux-small-project-boilerplate",
+  "description": "this is a react-redux boilerplate use for smaller project such as prototyping, simple SPA sites and simple web application",
+  "main": "server.js",
+  "authors": [
+    "TONI <tonilim85@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "inotives"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.1",
+    "animate.css": "^3.5.1",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.6"
+  }
+}
