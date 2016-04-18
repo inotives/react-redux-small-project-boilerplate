@@ -11,12 +11,14 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 
 import * as reducers from './reducers'
-import { App, Home, PageTwo, PageThree } from './components'
+import { App, Home, About, Contact, Project, Blog } from './components'
 
 const reducer = combineReducers({
   ...reducers,
   routing: routerReducer
 })
+
+
 
 const store = createStore(
   reducer
@@ -30,8 +32,10 @@ ReactDOM.render(
       <Router history={history}>
         <Route path="/" component={App}>
           <IndexRoute component={Home}/>
-          <Route path="about" component={PageTwo}/>
-          <Route path="contact" component={PageThree}/>
+          <Route path="about" component={About}/>
+          <Route path="contact" component={Contact}/>
+          <Route path="project" component={Project}/>
+          <Route path="blog" component={Blog}/>
         </Route>
       </Router>
     </div>

@@ -1,27 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increase, decrease } from '../actions/count'
+import { increase, decrease } from '../../actions/count'
+import Jumbotron from '../Jumbotron';
 
-function Home({ number, increase, decrease }) {
+const Home = () => {
   return (
     <div>
-
       <div className="container">
-
+        <Jumbotron
+          pageTitle="Home Page"
+          pageDescr="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          />
       </div>
       <hr/>
-      <div className="container">
-        <div className="col-md-3 well">
-          <button className="btn btn-lg btn-primary" onClick={() => increase(1)}><i className="fa fa-plus"></i></button>
-          <span className="well"> {number}</span>
-          <button className="btn btn-lg btn-danger" onClick={() => decrease(1)}><i className="fa fa-minus"></i></button>
-        </div>
-      </div>
     </div>
   )
 }
 
-export default connect(
-  state => ({ number: state.count.number }),
-  { increase, decrease }
-)(Home)
+export default Home

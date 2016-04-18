@@ -1,4 +1,8 @@
 export App from './App'
-export Home from './Home'
-export PageTwo from './PageTwo'
-export PageThree from './PageThree'
+
+// pages
+export Home from './pages/PageHome'
+export About from './pages/PageAbout'
+export Project from './pages/PageProject'
+export Contact from './pages/PageContact'
+export Blog from './pages/PageBlog'

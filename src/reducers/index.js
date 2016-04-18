@@ -1,1 +1,1 @@
-export count from './reducerCount';
+export navLinks from './reducerNavLink';

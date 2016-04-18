@@ -1,9 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router';
 
 class NavBar extends React.Component {
+  renderLinks() {
+      return this.props.navLinks.map( (navLink) => {
+        return (
+          <li key={navLink.path} className="page-scroll"> <Link to={navLink.path} >{navLink.text}</Link> </li>
+        )
+      })
+  }
 
   render(){
+    if(!this.props.navLinks) return console.log('render...')
+    console.log(this.props.navLinks)
     return (
       <nav className="navbar navbar-default">
           <div className="container">
@@ -19,18 +29,7 @@ class NavBar extends React.Component {
 
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul className="nav navbar-nav navbar-right">
-                      <li className="hidden">
-                          <a href="#page-top"></a>
-                      </li>
-                      <li className="page-scroll">
-                          <Link to="/">Home</Link>
-                      </li>
-                      <li className="page-scroll">
-                          <Link to="/about">About</Link>
-                      </li>
-                      <li className="page-scroll">
-                          <Link to="/contact">Contact</Link>
-                      </li>
+                      {this.renderLinks()}
                   </ul>
               </div>
           </div>
@@ -40,4 +39,11 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar;
+function mapStateToProps(state) {
+  // whatever return here will show up as props
+  return {
+    navLinks: state.navLinks
+  }
+}
+
+export default connect(mapStateToProps)(NavBar);
